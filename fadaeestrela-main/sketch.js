@@ -13,8 +13,8 @@ function preload() {
   starImg = loadImage('images/star.png')
   bgImg = loadImage('images/starNight.png')
   //carregar animação de fada
-  imgFada = loadAmimation('fairy.png,fairyImage1.png,fairyImage2')
-  vozFada = loadSound('joyMusic.mp3')
+  imgFada = loadAnimation('images/fairy.png', 'images/fairyImage1.png', 'images/fairyImage2')
+  vozFada = loadSound('sound/joyMusic.mp3')
 }
 function draw() {
   if (star.y > 470 && starBody.position.y > 470) {
@@ -29,7 +29,8 @@ function setup() {
   vozFada.play()
 
   //criar sprite de fada e adicionar animação para fada
-  imgFada.addAnimation('fada', fairy.png, fairyImage1.png, fairyImage2)
+  fada = createSprite(50, 500)
+  fada.addAnimation('fada', imgFada)
 
   star = createSprite(650, 30)
   star.addImage(starImg)
